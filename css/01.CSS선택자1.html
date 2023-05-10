@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자 1</title>
+    <style>
+        /* 모든 요소 선택자 테스트 */
+        *{
+            list-style: none;
+        }
+
+        /* 태그 선택자 테스트 */
+        pre{
+            color: blue;
+        }
+        
+        /* 클래스 선택자 테스트 */
+        .class1{
+            background-color: beige;
+            color: purple;
+        }
+        .cyan{
+            color: cyan;
+        }
+        .title{
+            font-style: italic;
+            font-size: 2em;
+            font-weight: 800;
+        }
+
+        /* 아이디 선택자 테스트 */
+        #id1{
+            background-color: yellow;
+            color: red;
+        }
+        #id2{
+            background-color: greenyellow;
+            color: violet;
+        }
+
+        /* 그룹 선택자
+            같은 스타일을 사용하는 선택자를 한꺼번에 정의
+            ,를 이용하여 선택자를 나열 */
+        #id3, #id4, .class3, .class4{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS 선택자 1</h1>
+    <!--선택자
+        특정 HTML 요소를 선택할 때 사용하는 기능으로 
+        요소를 선택하여 원하는 스타일과 기능을 적용할 수 있다.-->
+    <h3>1. 모든 선택자(*)</h3>
+    HTML 문서 안의 모든 태그를 선택할 때 전체 선택자를 사용한다.
+
+    <!--pre태그 : 작성한 그대로 화면에 보여줌)-->
+    <pre>
+        *{
+            스타일속성: 값;
+            스타일속성: 값;
+            ...
+        }
+    </pre>
+
+    <h3>2. 태그 선택자</h3>
+    태그명을 이용해 요소를 선택
+    <pre>
+        태그명{
+            스타일속성: 값;
+            스타일속성: 값;
+            ...
+        }
+    </pre>
+
+    <h3>3. 클래스 선택자(.class명)</h3>
+    HTML 문서 내에 여러 개의 태그를 동일한 클래스명으로 지정하여 선택할 때 사용
+    <pre>
+        .class명{
+            스타일속성: 값;
+            스타일속성: 값;
+            ...
+        }
+    </pre>
+
+    <h3>4. 아이디 선택자(#id명)</h3>
+    요소의 id속성을 이용하여 요소를 선택
+    <pre>
+        #id명{
+            스타일속성: 값;
+            스타일속성: 값;
+            ...
+        }
+    </pre>
+
+    <ul>
+        <li class='class1'>클래스 선택자 테스트 1</li>
+        <li class='class2 cyan'>클래스 선택자 테스트 2</li>
+        <li class='class3'>클래스 선택자 테스트 3</li>
+        <li class='class4'>클래스 선택자 테스트 4</li>
+        <li class='class5 title'>클래스 선택자 테스트 5</li>
+    </ul>
+
+    <ol>
+        <li id='id1'>아이디 선택자 테스트 1</li>
+        <li id='id2'>아이디 선택자 테스트 2</li>
+        <li id='id3'>아이디 선택자 테스트 3</li>
+        <li id='id4'>아이디 선택자 테스트 4</li>
+        <li id='id5' class='cyan'>아이디 선택자 테스트 5</li>
+    </ol>
+</body>
+</html>

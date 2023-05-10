@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자 우선순위</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+        h1{
+            color: royalblue;
+        }
+        h1{
+            color: darkblue;
+            background-color: lightcyan;
+            font-family: 'Jua', sans-serif;
+        }
+        #test1{
+            background-color: lightseagreen !important;
+            color: white;
+        }
+        .pinkBg{
+            background-color: pink;
+        }
+        .red{
+            color: red;            
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS 선택자 우선순위</h1>
+    <p>
+        기본적으로 위에서 아래로 적용
+        같은 요소에 다양한 선택자로 CSS속성이 설정된 경우 우선순위에 따라 스타일이 적용된다.
+        <br><span class='red'>태그 선택자 < 클래스 선택자 < 아이디 선택자 < 인라인 선택자 < !important</span>
+    </p>
+
+    <div id='test1' class='pinkBg' style='background-color: lightyellow;'>우선순위 테스트 1</div>
+    <p id='test2'>우선순위 테스트 2</p>
+</body>
+</html>
