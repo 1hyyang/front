@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>배경 이미지</title>
+    <style>
+        body{
+            height: 100vw;
+            background-image: url(images/bg2.png);
+            background-repeat: no-repeat;
+            background-position: right top;
+            /* 배경 이미지 고정
+                기본값: scroll(화면 스크롤과 함께 이미지도 스크롤) */
+            background-attachment: fixed;
+            /* 여러 가지 속성을 함께 표기 */    
+            background: url(images/bg4\ copy.jpg) no-repeat center bottom fixed;         
+        }
+        #container{
+            height: 100vw;
+            background-image: url(images/bg1.jpg);
+            background-repeat: no-repeat;
+            background-repeat: repeat-x;
+            background-repeat: repeat-y;
+            border: 10px dotted #ccc;
+            padding: 30px;
+            /* 배경화면 적용 범위 지정 */
+            /* border영역까지 포함하여 배경화면 출력 */
+            background-clip: border-box;
+            /* padding영역까지 배경화면 출력 */
+            background-clip: padding-box;
+            /* content영역까지 배경화면 출력 */
+            background-clip: content-box;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            /* border: 1px solid; */
+            /* 배경 이미지 지정 */
+            background-image: url(images/book-icon.png);
+            /* 반복 제거 */
+            background-repeat: no-repeat;
+            /* 위치 지정 */
+            /* 수평 : left center right 백분율 길이값 */
+            /* 수직 : top center bottom 백분율 길이값 */
+            background-position: left center;
+            /* 줄간격 */
+            line-height: 40px;
+            padding-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id='container'>텍스트</div>
+    <h1>이지스 퍼블리싱</h1>
+    <ul>
+        <li>회사 소개</li>
+        <li>도서</li>
+        <li>자료실</li>
+        <li>동영상강의</li>
+    </ul>
+</body>
+</html>

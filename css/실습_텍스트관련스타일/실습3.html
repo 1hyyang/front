@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang='ko'>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>가정용 꿀사과</title>
     <style>
+        *{ 
+            margin: 0px;
+        }
         div{
             width: 600px;
             margin: 0px auto;
@@ -24,13 +27,21 @@
             background-color: rgba(0,0,0,0.5);
         }
         h1{
+            /* 부모요소를 기준을 기준으로 자리 배치
+               부모요소 : 가장 가까운 포지션이 지정되어 있는 요소 */
+            position: absolute;
+            top: 15px;
             color: #fff;
             padding-left: 50px;
+            border: 1px solid;
         }
         .textBoxText{
+            position: absolute;
+            bottom: 20px;
             color: goldenrod;
             padding-left: 40px;
             line-height: 2em;
+            /* border: 1px solid; */
         }
         table, th, td{
             border: 1px solid rgb(200, 200, 200);
@@ -69,9 +80,9 @@
             <br>질 좋은 사과를 저렴하게 즐겨보세요
         </p></div>
     </div>
-    <!-- <div>
+    <div>
         <img src='../images/top.jpg' alt='가정용 꿀사과' width='600px'>
-    </div> -->
+    </div>
     <div>
         <table>
             <tr>
