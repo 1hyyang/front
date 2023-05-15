@@ -1,0 +1,47 @@
+/* 후손 선택자 */
+section h1{
+    background-color: black;
+    color: white;
+}
+/* 자식 선택자 */
+section > p{
+    font-size: 1.2em;
+    font-weight: 700;
+}
+/* 인접 선택자 */
+#div-test + div{
+    background-color: aliceblue
+}
+#div-test ~ div{
+    font-style: italic;
+}
+#p-test + p{
+    background-color: oldlace;
+}
+/* 속성 선택자 
+   선택자[속성] */
+/* 우선순위에 따라 적용 */
+/* id 속성을 가진 요소를 선택 */
+.div-class[id]{
+    border: 1px solid;
+}
+/* div 중에 name속성의 값이 name1과 일치하는 태그 */
+.div-class[id=name1]{
+    background-color: lavenderblush;
+}
+/* class속성의 값이 div로 시작되는 */
+.div-class[class^=div]{
+    background-color: indianred;
+}
+/* id 속성의 값이 name을 포함하는 */
+.class-div[id*=name]{
+    background-color: honeydew;
+}
+/* class 속성의 값이 class로 끝나는 */
+div[class$=class]{
+    background-color: honeydew;
+}
+/* class 속성의 값에 p20이 포함되어 있는 */
+div[class~=p20]{
+    padding: 20px;
+}

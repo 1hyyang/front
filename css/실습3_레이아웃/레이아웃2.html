@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 2</title>
+    <style>
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        .wrap{
+            position: relative;
+            width: 900px;
+            height: 900px;
+            border: 2px solid red;
+        }
+        header>div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+            float: left;
+            }
+        header>nav{
+            position: absolute;
+            left: 200px;
+            width: 700px;
+            height: 200px;
+            border: 2px solid red;
+            float: left;
+            }
+        .main>aside{
+            position: absolute;
+            top: 200px;
+            width: 300px;
+            height: 500px;
+            border: 2px solid red;
+            float: left;
+        }
+        .main>main{
+            position: absolute;
+            top: 200px;
+            left: 300px;
+            width: 600px;
+            height: 500px;
+            border: 2px solid red;
+            float: left;            
+        }
+        footer{
+            position: absolute;
+            top: 700px;
+            width: 900px;
+            height: 200px;
+            border: 2px solid red;
+        }        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div></div>
+            <nav></nav>
+        </header>        
+        <div class="main">
+            <aside></aside>
+            <main></main>
+        </div>        
+        <footer></footer>
+    </div>
+</body>
+</html>
