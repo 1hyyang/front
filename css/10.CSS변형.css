@@ -1,0 +1,52 @@
+.trans-test{
+    width: 250px;
+    height: 200px;
+    /* 위치를 지정하기 위해서 포지션 속성을 설정 */
+    position: relative;
+    left: 50px;
+    /* 
+        transition : 웹 요소의 스타일 속성을 조금씩 자연스럽게 변경
+        기본값
+            all : 요소의 모든 속성
+            ease : 천천히 시작해서 빨라지다가 천천히 끝남
+    */
+    transition: 1s;
+}
+/* transform : 특정 요소의 크기나 형태 등 스타일을 변경하는 것 */
+#trans1:hover{
+    /* translate : 위치 변경 */
+    transform: translateX(-50px);
+}
+#trans2:hover{
+    transform: translateY(50px);
+}
+#trans3:hover{
+    transform: translate(50px, 50px);
+}
+#trans4:hover{
+    /* scale : 크기 변경 */
+    transform: scaleX(150%);
+}
+#trans5:hover{
+    transform: scaleY(50%);
+}
+#trans6:hover{
+    transform: scale(300%, 300%);
+}
+#trans7:hover{
+    /* rotate : 각도 변경 */
+    transform: rotate(45deg);
+}
+#trans8:hover{
+    transform: rotate(-45deg);
+}
+#trans9:hover{
+    /* 중심축을 가운데로 (기본값) */
+    transform-origin: center;
+    transform: rotate(45deg);
+}
+#trans10:hover{
+    /* 중심축을 왼쪽 위로 */
+    transform-origin: left top;
+    transform: rotate(45deg);
+}
