@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: darkcyan;
+}
+#container{
+    width: 320px;
+    margin: 50px auto;
+}
+.card{
+    width: 300px;
+    height: 500px;
+    margin: 20px 10px;
+    border: 1px solid #aaa;
+    background-color: #eee;
+    position: relative;
+}
+.words{
+    position: absolute;
+    top: 300px;
+    padding: 20px;
+    text-align: center;
+}    
+@media screen and (min-width: 768px) and (max-width: 1719px){
+    #container{
+        width: 650px;
+        margin: 50px auto;
+    }
+    .card{
+        width: 620px;
+        height: 250px;
+        position: relative;
+    }
+    .words{
+        position: absolute;
+        left: 310px;
+        top: 50px;
+        width: 300px;
+        padding: 20px;
+        text-align: center;
+    }   
+}

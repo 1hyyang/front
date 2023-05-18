@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플렉스 박스 항목 배치 (여러 줄)</title>
+    <style>
+        .container{
+            display: flex;
+            width: 200px;
+            height: 150px;
+            background-color: aliceblue;
+            border: 1px solid #333;
+            margin-bottom: 30px;
+            /* 왼쪽에서 오른쪽, 여러 줄 표시 */
+            flex-flow: row wrap;
+        }
+        .box{
+            /* padding: 5px 45px; */
+            /* margin: 5px; */
+            width: 80px;
+            background-color: #333;
+            border: 1px dotted #eee;
+        }
+        p{
+            color: #fff;
+            text-align: center;
+        }
+        #opt1{
+            /* 교차축 시작점을 기준으로 배치 */
+            align-content: flex-start;
+        }
+        #opt2{
+            /* 교차축 끝점을 기준으로 배치 */
+            align-content: flex-end;
+            /* justify-content: flex-end; */
+        }
+        #opt3{
+            /* 교차축 중앙을 기준으로 배치 */
+            align-content: center;
+        }        
+        #opt4{
+            /* 시작점과 끝점 배치 후 중간 항목은 같은 간격으로 배치 */
+            align-content: space-between;
+        }
+        #opt5{
+            /* 전체 항목을 같은 간격으로 배치 */
+            align-content: space-around;
+        }
+        #opt6{
+            /* 항목을 늘려 교차축에 가득 차게 배치 */
+            align-content: stretch;
+        }
+    </style>
+</head>
+<body>
+    <h2>align-content</h2>
+    플렉스 항목이 여러 줄로 표시될 때 교차축 중심의 배치 방법 지정
+    <div class="container" id="opt1">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+    <div class="container" id="opt2">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+    <div class="container" id="opt3">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+    <div class="container" id="opt4">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+    <div class="container" id="opt5">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+    <div class="container" id="opt6">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+</body>
+</html>

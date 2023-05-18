@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 쿼리 가로 전환</title>
+    <style>
+        body{
+            background-color: #eee;
+        }
+        /* 너비가 높이보다 큰 경우 */ 
+        @media screen and (orientation: landscape){
+            body{
+                background-color: orange;
+            }
+        }
+        /* 높이가 너비보다 큰 경우 */
+        @media screen and (orientation: portrait){
+            body{
+                background-color: yellow;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Media Query</h1>
+</body>
+</html>

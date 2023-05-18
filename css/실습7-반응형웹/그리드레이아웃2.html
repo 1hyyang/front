@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드 레이아웃 2</title>
+    <style>
+        .wrapper1{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        .wrapper2{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+        .item{
+            padding: 10px;
+            background-color: floralwhite;
+        }
+        .item:nth-child(even){
+            background-color: antiquewhite ;
+        }
+    </style>
+</head>
+<body>
+    <h2>auto-fit/auto-fill</h2>
+    컬럼의 너비와 함께 auto-fit이나 auto-fill을 지정하면 화면 너비에 따라 자동으로 컬럼의 개수를 조절
+    <br>auto-fit : 남는 공간 없이 꽉 채우기
+    <br>auto-fill : 최소 너비까지 표시하고 남는 공간은 그대로 둠
+
+    <h3>auto-fit</h3>
+    <div class="wrapper1">
+        <div class="item">Eu ut aute cillum excepteur exercitation mollit labore aliquip elit occaecat.</div>
+        <div class="item">Cupidatat et qui nostrud elit.</div>
+        <div class="item">Laboris enim duis non eiusmod velit veniam enim culpa non.</div>
+        <div class="item">Sunt mollit culpa aliquip et commodo aliquip occaecat consectetur.</div>
+        <div class="item">Dolore anim aliqua laborum occaecat Lorem reprehenderit incididunt.</div>
+    </div>
+
+    <h3>auto-fill</h3>
+    <div class="wrapper2">
+        <div class="item">Eu ut aute cillum excepteur exercitation mollit labore aliquip elit occaecat.</div>
+        <div class="item">Cupidatat et qui nostrud elit.</div>
+        <div class="item">Laboris enim duis non eiusmod velit veniam enim culpa non.</div>
+        <div class="item">Sunt mollit culpa aliquip et commodo aliquip occaecat consectetur.</div>
+        <div class="item">Dolore anim aliqua laborum occaecat Lorem reprehenderit incididunt.</div>
+    </div>
+</body>
+</html>

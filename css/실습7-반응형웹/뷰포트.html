@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--name : 설정이름, content :  설정값-->
+    <!--기기의 width값으로 설정하고 배율을 지정-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰포트</title>
+    <style>
+        html{font-size: 20px;}
+        .em2{font-size: 2em;}
+        .em3{font-size: 0.5em;}
+        .rem2{font-size: 2rem;}
+        .rem3{font-size: 0.5rem;}
+        .vw1{font-size: 1vw;}
+        .vw2{font-size: 2vw;}
+        .vh1{font-size: 1vh;}
+        .vh2{font-size: 2vh;}
+        .vmin1{font-size: 1vmin;}
+        .vmin2{font-size: 2vmin;}
+        .vmax1{font-size: 1vmax;}
+        .vmax2{font-size: 2vmax;}
+    </style>
+</head>
+<body>
+    <h1>Viewport</h1>
+    <p>
+        현재 화면에 보여지는 영역 
+        <br>기기별 뷰포트가 다르므로 동일한 웹 페이지라도 기기에 따른 배율 조정이 발생하여 
+        화면의 크기가 다르게 보이는 현상
+    </p>
+
+    <h2>단위</h2>
+    브라우저의 기본 글자 크기 (16px)
+    <p>
+        상대단위 : 고정되지 않고 어떤 기준에 따라 유동적으로 바뀔 수 있는 길이 (em, rem, %, vw, vh)
+        <br>절대단위 : 항상 고정된 길이를 나타내는 단위 (px, pt)
+    </p>
+    
+    <h3>em과 rem</h3>
+    font-size에 비례해서 결정되는 상대단위
+    <br>em : 요소의 위치를 기준으로 1em
+    <br>rem : 최상위요소(html)의 글자 크기를 기준으로 1rem   
+    <div>div 1depth
+        <div class='em2'>div 2depth
+            <div class='em2'>div 3depth
+                <div class='em3'>div 4depth</div>
+            </div>
+        </div>
+    </div>   
+    <div>div 1depth
+        <div class='rem2'>div 2depth
+            <div class='rem2'>div 3depth
+                <div class='rem3'>div 4depth</div>
+            </div>
+        </div>
+    </div>
+
+    <h3>vw</h3>
+    화면 너비의 1/100 : 1vw    
+    <div class='vw1'>(최솟값 : 10px)
+        Magna tempor sunt in id esse est eu laboris reprehenderit. Nulla minim et anim tempor non veniam proident ullamco. Commodo ad ad nulla labore sunt id sint qui pariatur ea id qui ex. Mollit nostrud eiusmod Lorem mollit ex anim non deserunt.
+    </div>
+    <div class='vw2'>
+        Ad excepteur est est cillum ad duis laboris est cupidatat. Aute nostrud veniam veniam cupidatat nulla cupidatat anim do do cupidatat ad. Sint laboris culpa cillum tempor Lorem.    
+    </div>
+
+    <h3>vh</h3>
+    화면 높이의 1/100 : 1vh
+    <div class='vh1'>(스크롤을 포함한 화면 높이를 기준으로 한다.)
+        Proident do adipisicing pariatur ex exercitation. Sint reprehenderit laborum irure est laborum nisi incididunt nisi anim sint pariatur ipsum. Aliquip voluptate ullamco mollit id officia ipsum. Laboris anim est exercitation nulla incididunt ea.
+    </div>
+    <div class='vh2'>
+        Nulla reprehenderit veniam laboris commodo velit consectetur ut labore. Reprehenderit cillum qui est adipisicing consectetur. Occaecat id est dolor cupidatat sint. Nostrud officia duis eiusmod cillum nulla eu est voluptate adipisicing adipisicing. Irure sit laborum irure esse velit officia.
+    </div>
+    <h3>vmin</h3>
+    뷰포트 너비와 높이 중 작은 값의 1%
+    <div class='vmin1'>
+        Ad sunt Lorem pariatur consequat fugiat laboris proident culpa. Nulla exercitation ut reprehenderit tempor nostrud anim sit cupidatat irure ea adipisicing irure sunt enim. Esse reprehenderit ipsum consectetur mollit ex eiusmod et eu. Quis labore proident aute tempor nisi pariatur.
+    </div>
+    <div class='vmin2'>
+        Id reprehenderit commodo eiusmod est culpa eiusmod Lorem anim laboris dolore. Nostrud anim officia Lorem deserunt est minim in qui laborum. Occaecat aliquip id exercitation officia in pariatur velit sit minim ex cupidatat Lorem exercitation excepteur. Cupidatat pariatur esse eiusmod aliquip nisi in irure sunt esse pariatur do commodo.
+    </div>
+    <h3>vmax</h3>
+    뷰포트 너비와 높이 중 큰 값의 1%
+    <div class='vmax1'>
+        Esse consequat aute voluptate ea sit ullamco amet in cillum laborum pariatur fugiat magna. Laborum proident sunt sint cillum proident culpa exercitation ex ex ipsum esse cupidatat laborum laboris. Qui quis aliquip sit ex. Irure sunt commodo sunt laboris occaecat. Quis voluptate ipsum sint sint magna dolor.
+    </div>
+    <div class='vmax2'>
+        Ullamco cillum do dolor et laboris dolor. Veniam consequat exercitation ut qui amet. Proident esse nostrud eiusmod cupidatat duis velit exercitation incididunt qui in cillum irure sint esse. Do sunt non exercitation culpa excepteur.
+    </div>
+</body>
+</html>
