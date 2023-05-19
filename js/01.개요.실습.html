@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개요 실습 문제</title>
+    <style>
+        .div-test {
+            border: 1px solid;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+        #area {
+            border: 1px solid;
+            width: 300px;
+            height: 200px;
+            margin-top: 5px;
+        }
+        td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>개요 실습 문제</h1>
+
+    <hr>
+
+    <h2>문제 1. 색상 조절하기</h2>
+    <p>
+        색상 선택 후 변경 버튼을 클릭하면 색상이 변경되도록 만들기
+    </p>
+    <div id="div1" class="div-test"></div>
+    <input id="selectColor" type="color">
+    <button onclick="changeColor();">변경</button>
+    <script>
+        function changeColor(){
+            var color = document.querySelector('#selectColor').value;
+            document.querySelector('#div1').style.backgroundColor = color;
+            console.log('changeColor(): ', color);
+
+            // var div1 = document.querySelector('#div1');
+            // var selectColor = document.querySelector('#selectColor');
+            // console.log('div1', div1);
+            // console.log('selectColor', selectColor);
+            // // div1.style : 요소의 Inline Css
+            // // div1.style.backgroundColor
+            // // getComputedStyle(document.querySelector('#div1')).backgroundColor
+            // // selectColor의 색상값을 변수에 저장
+            // var color = selectColor.value;
+            // var boxColor = getComputedStyle(div1).backgroundColor;
+            // console.log(color);
+            // console.log(boxColor);
+        }
+    </script>    
+    
+    <hr>
+    
+    <h2>문제 2. 크기 변경하기</h2>
+    <p>
+        버튼에 따라 크기 조절이 가능하도록 만들기
+    </p>
+    <div id="div2" class="div-test"></div>
+    <button onclick="setSize('1');">50X50</button>
+    <button onclick="setSize('2');">원본(100X100)</button>
+    <button onclick="setSize('3');">200X200</button>
+    <script>
+        function setSize(no){
+            if(no=='1'){
+                var width = document.querySelector('#div2').style.width = '50px';
+                var height = document.querySelector('#div2').style.height = '50px';
+                console.log('setSize(): 50x50');
+            }
+            if(no=='2'){
+                var width = document.querySelector('#div2').style.width = '100px';
+                var height = document.querySelector('#div2').style.height = '100px';
+                console.log('setSize(): 100x100');
+            }
+            if(no=='3'){
+                var width = document.querySelector('#div2').style.width = '200px';
+                var height = document.querySelector('#div2').style.height = '200px';
+                console.log('setSize(): 200x200');
+            }
+        }
+    </script>   
+
+    <hr>
+
+    <h2>문제 3. HTML 태그에 접근</h2>
+    <p>
+        텍스트 박스로 입력받은 데이터를 가져와서 출력하기 <br>
+        (단, 구매자는 태그이름, 상품명은 아이디, 구매 가격은 name값으로 접근)
+    </p>
+    <label>구매자 : <input type="text" placeholder="구매자의 이름을 입력하세요."></label> 
+    <br><br>
+    <label>상품명 : <input type="text" id="pName" placeholder="구매 상품명을 입력하세요."></label>
+    <br><br>
+    <label>가격 : <input type="text" name="price" placeholder="구매 가격을 입력하세요."></label>
+    <br><br>
+    <button onclick="printValue();">입력값 출력하기</button>
+    <script>
+        function printValue(){
+            var cName = document.querySelector('input:first-child').value;
+            var pName = document.querySelector('#pName').value;
+            var price = document.querySelector('[name=price]').value;
+            // getElementsBy으로 접근하면 배열로 받는다.
+            // 문제 1에서 input 태그를 사용했으므로 인덱스 0은 이미 자리가 차 있다.
+            // var cName = document.getElementsByTagName('input')[1].value;
+            // var pName = document.getElementsByTagName('input')[2].value;
+            // var price = document.getElementsByTagName('input')[3].value;
+            var area = document.querySelector('#area');
+            area.innerHTML = `구매자: ${cName}<br>상품명: ${pName}<br>가격: ${price}원`;
+            console.log('printValue(): ', area.innerHTML);
+        }
+    </script>
+    <div id="area"></div>    
+
+    <hr>
+
+    <h2>문제 4. 테이블 만들기</h2>
+    <p>
+        prompt()로 사용자로부터 행과 열의 개수를 입력받아 테이블 만들기 <br>
+        아래의 div 태그에 innerHTML 속성을 사용해서 만들어진 테이블 포함한다.
+    </p>
+    <button onclick="makeTable();">테이블 생성</button>
+    <div id="div3" style="margin-top: 10px;"></div>
+    <script>
+        function makeTable(){
+            var row = prompt('테이블의 행을 입력하세요.');
+            console.log('row: ', row);
+            var column = prompt('테이블의 열을 입력하세요.');
+            console.log('column: ', column);
+            var table = '<table border="1px">';
+            for(var n=0; n<row; n++){
+                table += '<tr>';
+                    for(var m=0; m<column; m++){
+                        table += '<td></td>';
+                    }
+                table += '</tr>';
+            }
+            table += '</table>';
+            div3.innerHTML = table;
+            console.log('makeTable(): ', `${column}*${row} 테이블이 생성되었습니다.`);
+        }
+    </script>
+    <!-- <table border='1px'>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table> -->
+
+    <hr>
+
+    <h2>문제 5. 인치(inch)를 센티미터(cm)로 변환하기</h2>
+    <button onclick='inchToCm()'>inch→cm</button>
+    <div id='div4'></div>
+    <script>
+        function inchToCm(){
+            var inch = prompt("값을 입력하세요.");
+            console.log('inch: ', inch);
+            var res_cm = inch * 2.54;
+            console.log('res_cm: ', res_cm);
+            div4.innerHTML = `${inch}inch=${res_cm}cm`;
+        }
+    </script>
+    
+
+
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+</body>
+</html>
