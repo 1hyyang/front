@@ -25,7 +25,7 @@ section > p{
 .div-class[id]{
     border: 1px solid;
 }
-/* div 중에 name속성의 값이 name1과 일치하는 태그 */
+/* div 중에 id속성의 값이 name1과 일치하는 태그 */
 .div-class[id=name1]{
     background-color: lavenderblush;
 }
