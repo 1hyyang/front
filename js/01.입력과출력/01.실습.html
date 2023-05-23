@@ -30,18 +30,18 @@
 
     <hr>
 
-    <h2>문제 1. 색상 조절하기</h2>
+    <h2>문제 1. 색상 변경하기</h2>
     <p>
         색상 선택 후 변경 버튼을 클릭하면 색상이 변경되도록 만들기
     </p>
     <div id="div1" class="div-test"></div>
     <input id="selectColor" type="color">
-    <button onclick="changeColor();">변경</button>
+    <button onclick="changeColor();">색상 변경</button>
     <script>
         function changeColor(){
             var color = document.querySelector('#selectColor').value;
             document.querySelector('#div1').style.backgroundColor = color;
-            console.log('changeColor(): ', color);
+            console.log('color: ', color);
 
             // var div1 = document.querySelector('#div1');
             // var selectColor = document.querySelector('#selectColor');
