@@ -112,16 +112,20 @@ window.onload = function(){
         area6.innerHTML += `<br>array2 = [${array2}]`;
         area6.innerHTML += `<br>array1.sort() = [${array1.sort()}]`;
         area6.innerHTML += `<br>array2.sort() = [${array2.sort()}]`;
+        // 내림차순 정렬
         area6.innerHTML += `<br>array2.sort().reverse() = [${array2.sort().reverse()}]`;
         // 원본 배열에 영향을 미친다.
         area6.innerHTML += `<br>array1 = [${array1}]`;
         area6.innerHTML += `<br>array2 = [${array2}]`;
         
         // sort() 메소드에 함수를 매개값으로 전달하여 정렬 기준을 변경할 수 있다.
+        // 수 정렬하기
+        // 오름차순 정렬
         array1.sort(function(left, right){
             return left - right
         });
         area6.innerHTML += `<br>array1 오름차순 정렬 : [${array1}]`;
+        // 내림차순 정렬
         array1.sort(function(left, right){
             return right - left
         });
