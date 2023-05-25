@@ -28,3 +28,7 @@ p {
   background-color:#8ddfff;
   font-style: italic;
 }
+.dark {
+	background-color:#222;
+	color:#eee;
+}

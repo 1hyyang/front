@@ -24,6 +24,7 @@ window.onload = function(){
         console.log(`random: ${random}`);
     })
     btn6.addEventListener('click', ()=>{
+        // funcTest()로 반환된 함수를 실행하기 위해 ()를 붙여야 한다.
         // let func = funcTest();
         // func();
         funcTest()();
