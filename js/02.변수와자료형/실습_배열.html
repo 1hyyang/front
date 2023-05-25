@@ -128,9 +128,14 @@
         function arrayTest3(){
             let remove = document.getElementById('remove');
             let add = document.getElementById('add');
-            let index = arr.indexOf(remove.value);
-            arr.splice(index,1);
-            arr.push(add.value);
+            let index = arr.indexOf(remove.value); // indexOf() : 존재하지 않는 값이 입력되면 -1을 반환한다.
+            // arr.splice(index,1); // index=-1이면 뒤에서 첫 번째 요소가 삭제된다.
+            if(index>-1){
+                arr.splice(index,1);
+            }
+            if(add.value!=''){
+                arr.push(add.value);
+            }
             print4.innerHTML = '';
             print4.innerHTML += arr.join(' ');
             remove.value = '';

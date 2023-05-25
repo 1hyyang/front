@@ -54,15 +54,15 @@ function typeTest2(){
     // 객체 타입
     let user = {
        /*
-            속성:값,
-            속성:값, 
+            속성: 값,
+            속성: 값, 
             ...
        */
-       name:'박서준',
-       age:20,
-       height:184.5,
-       id:'test',
-       hobbies:['축구','농구','야구']
+       name: '박서준',
+       age: 20,
+       height: 184.5,
+       id: 'test',
+       hobbies: ['축구','농구','야구']
     }
     console.log('user: ', user);
     console.log('user.name: ', user.name);
@@ -145,9 +145,9 @@ function forTest(){
         console.log(array[i]);
     };
     let student = {
-        name:'고경희'
-        , age:20
-        , class:'1' 
+        name: '고경희'
+        , age: 20
+        , class: '1' 
     };
     for(key in student){
         // 객체의 속성, 속성값을 출력
