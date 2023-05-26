@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>노드 추가하기</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    h1 {
+      padding:10px 20px;
+      margin-bottom:20px;
+      border-radius:8px;
+      background-color:#222;
+      color:#fff;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Enjoy your life</h1>    
+  </div>
+  <script>
+    // 만약 현재 시간이 12시 이전이면
+    //   images/morning.jpg
+    // 아니면 
+    //   images/afternoon.jpg
+    let img = document.createElement('img');
+    let date = new Date();
+    let container = document.getElementById('container');
+    // if(date.getHours()<12){
+    //   img.src='images/morning.jpg';
+    // } else{
+    //   img.src='images/afternoon.jpg'
+    // }
+    (date.getHours()<12)?img.src='images/morning.jpg':img.src='images/afternoon.jpg';
+    container.appendChild(img);
+  </script>
+</body>
+</html>
