@@ -21,5 +21,18 @@ window.onload = function(){
         tbody.appendChild(tr);
         // 제출시 새로고침되는 기본 이벤트가 발생하지 않도록 한다.
         e.preventDefault();
+
+        // let userName = document.querySelector('#username').value;
+        // let major = document.querySelector('#major').value;
+        // let tbody = document.querySelector('#attendant > tbody');
+        // let newTr = document.createElement('tr');
+        // let newTdUserName = document.createElement('td');
+        // let newTdMajor = document.createElement('td');
+        // newTdUserName.innerHTML = userName;
+        // newTdMajor.innerHTML = major;
+        // newTr.appendChild(newTdUserName);
+        // newTr.appendChild(newTdMajor);
+        // tbody.appendChild(newTr);
+        // e.preventDefault();
     })
 }
