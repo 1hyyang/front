@@ -24,8 +24,7 @@
                 let jsObj = JSON.parse(xhr.responseText);
                 console.log(jsObj);
                 let itemArr = jsObj.response.body.items.item;
-                let resDiv = document.getElementById('result');
-                resDiv += '<ul>';
+                result.innerHTML += '<ul>';
                 for(item of itemArr){
                     result.innerHTML += `
                         <li>
@@ -36,7 +35,7 @@
                         </li>
                     `;
                 }
-                resDiv += '</ul>';
+                result.innerHTML += '</ul>';
             }
         }
     </script>

@@ -32,7 +32,7 @@ window.onload = function(){
             // area1.innerHTML = date.toTimeString();
             area1.innerHTML = `${date.getHours()} : ${date.getMinutes()} : `
                             + `<span id='second'>${date.getSeconds()}</span>`;
-                        }, 1000);
+        }, 1000);
             console.log('timerId2: ', timerId2);
     })
     btnStop.addEventListener('click', function(){

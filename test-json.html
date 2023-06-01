@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <button id='btn'>testJson</button>
+    <script>
+        btn.addEventListener('click', function(){
+            testJson();
+        })
+
+        function testJson(){
+            let studentInfoStr = `[
+                {
+                    "name" : "고경희"
+                    , "major" : "컴퓨터공학"
+                    , "grade" : 2
+                    , "phone" : "010-1111-2222"
+                }
+                , {
+                    "name" : "홍길동"
+                    , "major" : "컴퓨터공학"
+                    , "grade" : 2
+                    , "phone" : "010-2222-3333"
+                }
+            ]`;            
+            console.log(studentInfoStr);
+            let studentInfoObj = JSON.parse(studentInfoStr);
+            console.log(studentInfoObj);
+            let studentInfoStr0 = JSON.stringify(studentInfoObj);
+            console.log(studentInfoStr0);
+        }
+    </script>
+</body>
+</html>
