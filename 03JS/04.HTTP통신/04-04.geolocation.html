@@ -50,10 +50,8 @@
       // 위치정보 사용 가능
       // getCurrentPosition(성공콜백, 오류콜백)
       navigator.geolocation.getCurrentPosition(position => {
-
         var lat = position.coords.latitude;
-        var lon = position.coords.longitude;
-        
+        var lon = position.coords.longitude;    
         var locPosition = new kakao.maps.LatLng(lat, lon); // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
         
         displayMarker(locPosition);

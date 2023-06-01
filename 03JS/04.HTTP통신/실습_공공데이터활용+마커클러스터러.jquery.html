@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>마커 클러스터러 사용하기</title>
+    <script src='실습_공공데이터활용+마커클러스터러.jquery.js'></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=99b2ce67f1c87e618b22c2e335a745a6&libraries=clusterer"></script>
+    <style>
+        *{
+            list-style: none;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="map" style="width:100%;height:350px;"></div>
+
+<form id='campForm'>
+    <div class='hidden'>
+        serviceKey  <input type='text' name='serviceKey' id='serviceKey' value='ucNm7adMfVimfmtvf10RgdkF5JiQ%2F4tKu8k8IqkTpSf5SoCXbVOtfHfZHWo7ERMI1smVf6RZu6s37H8SFFAToA%3D%3D'><br>
+        MobileOS    <input type='text' name='MobileOS' id='MobileOS' value='ETC'><br>
+        MobileApp   <input type='text' name='MobileApp' id='MobileApp' value='AppTest'><br>
+        mapX        <input type='text' name='mapX' id='mapX' value='128.6142847'><br>
+        mapY        <input type='text' name='mapY' id='mapY' value='36.0345423'><br>
+        <!-- _type : 데이터를 XML/JSON 중 어떤 포맷으로 받아올지 지정 -->
+        _type       <input type='text' name='_type' id='_type' value='json'><br>
+    </div>
+    numOfRows   <input type='number' name='numOfRows' id='numOfRows' value='10'><br>
+    pageNo      <input type='number' name='pageNo' id='pageNo' value='1'><br>
+    radius      <input type='number' name='radius' id='radius' value='20000'><br>
+    <button id='btnCampInfo'>캠핑장 정보 조회</button>
+</form>
+
+<div id='result'></div>
+</body>
+</html>

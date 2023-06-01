@@ -10,22 +10,26 @@ window.onload = function(){
     if(navigator.geolocation){
 
         // GeoLocation을 이용해서 접속 위치를 얻어옵니다
-        navigator.geolocation.getCurrentPosition(function(position) {
-
+        navigator.geolocation.getCurrentPosition(function(position) {            
             var lat = position.coords.latitude, // 위도
-                lon = position.coords.longitude; // 경도
+            lon = position.coords.longitude; // 경도            
+            var myPosition = new kakao.maps.LatLng(lat, lon); // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
             
-            var locPosition = new kakao.maps.LatLng(lat, lon) // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-
-            map.setCenter(locPosition);
+            // 지도 중심좌표를 접속위치로 변경합니다
+            map.setCenter(myPosition);
             
-            var marker = new kakao.maps.Marker({
-                map: map, // 마커를 표시할 지도
-                position: locPosition, // 마커를 표시할 위치
-                title: "내 위치" // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-            });
+            var title = "내 위치";
 
-            // campForm에서 mapX와 mapY의 value값을 변경
+            // 마커 이미지의 이미지 주소입니다
+            var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+            // 마커 이미지의 이미지 크기 입니다
+            var imageSize = new kakao.maps.Size(24, 35); 
+            // 마커 이미지를 생성합니다    
+            var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+            displayMarker(myPosition, title, markerImage);
+
+            // campForm의 mapX와 mapY의 value 값을 변경
             mapX.value = lon;
             mapY.value = lat;
         });
@@ -82,15 +86,18 @@ function printCampInfo(itemArr){
                 <p>${item.addr1}</p>
             </li>
         `;
-        displayMarker();
+        let campPosition = new kakao.maps.LatLng(item.mapY, item.mapX);
+        let title = item.facltNm;
+        displayMarker(campPosition, title);
     }
     result.innerHTML += '</ul>';
 }
 
-function displayMarker(){
+function displayMarker(locPosition, title, markerImage){
     var marker = new kakao.maps.Marker({
         map: map, // 마커를 표시할 지도
-        position: new kakao.maps.LatLng(item.mapY, item.mapX), // 마커를 표시할 위치
-        title: item.facltNm // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+        position: locPosition, // 마커를 표시할 위치
+        title: title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+        image : markerImage // 마커 이미지 
     });
 }
